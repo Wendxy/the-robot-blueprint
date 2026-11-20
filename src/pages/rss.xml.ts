@@ -1,3 +1,4 @@
+import { siteName } from "../lib/site";
 import type { APIRoute } from "astro";
 import { getNotes, href, noteHref } from "../lib/posts";
 import { escapeXml } from "../lib/xml";
@@ -17,7 +18,7 @@ export const GET: APIRoute = async ({ site, url }) => {
   });
   return new Response(
     `<?xml version="1.0" encoding="UTF-8"?>
-    <rss version="2.0"><channel><title>Motion / Notes</title>
+    <rss version="2.0"><channel><title>${escapeXml(siteName)}</title>
     <link>${absolute(href())}</link><description>An independent robotics journal.</description>
     <language>en-au</language>${items.join("\n")}</channel></rss>`,
     { headers: { "Content-Type": "application/rss+xml; charset=utf-8" } },

@@ -1,4 +1,4 @@
-# Motion / Notes
+# The Robot Blueprint
 
 An independent robotics research journal built with Astro, TypeScript, Markdown and plain CSS. Fonts and the handoff's original arm sketch ship with the site. Readers can navigate the entire journal with JavaScript disabled.
 
@@ -54,8 +54,8 @@ Choose **GitHub Actions** in the repository's Pages settings. The existing deplo
 To test a project prefix locally:
 
 ```sh
-export SITE_URL=https://example.github.io/motion-notes/
-export BASE_PATH=/motion-notes/
+export SITE_URL=https://wendxy.github.io/the-robot-blueprint/
+export BASE_PATH=/the-robot-blueprint/
 npm run build
 npm run check:links
 ```

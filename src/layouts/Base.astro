@@ -1,4 +1,5 @@
 ---
+import { siteName } from "../lib/site";
 import "../styles/global.css";
 import { href } from "../lib/posts";
 
@@ -12,7 +13,7 @@ const {
   title, description = "An independent journal on robot learning, small machines, and intelligence in the physical world.",
   article = false, noindex = false,
 } = Astro.props;
-const displayTitle = title ? `${title} — Motion / Notes` : "Motion / Notes — An independent robotics journal";
+const displayTitle = title ? `${title} — ${siteName}` : `${siteName} — An independent robotics journal`;
 const canonical = Astro.site && !noindex ? new URL(Astro.url.pathname, Astro.site) : undefined;
 const pages = [["Writing", "writing/"], ["Research", "research/"], ["About", "about/"]];
 ---
@@ -29,16 +30,16 @@ const pages = [["Writing", "writing/"], ["Research", "research/"], ["About", "ab
     <meta property="og:title" content={displayTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={article ? "article" : "website"} />
-    <meta property="og:site_name" content="Motion / Notes" />
+    <meta property="og:site_name" content={siteName} />
     {canonical && <meta property="og:url" content={canonical} />}
-    <link rel="alternate" type="application/rss+xml" title="Motion / Notes" href={href("rss.xml")} />
+    <link rel="alternate" type="application/rss+xml" title={siteName} href={href("rss.xml")} />
     <link rel="icon" href={href("favicon.svg")} type="image/svg+xml" />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <div class="shell header-inner">
-        <a class="wordmark" href={href()} aria-label="Motion / Notes home">motion <span>/</span> notes</a>
+        <a class="wordmark" href={href()} aria-label={`${siteName} home`}>{siteName}</a>
         <nav class="nav" aria-label="Primary">
           {pages.map(([label, path]) => <a href={href(path)} aria-current={Astro.url.pathname === href(path) ? "page" : undefined}>{label}</a>)}
         </nav>
@@ -47,7 +48,7 @@ const pages = [["Writing", "writing/"], ["Research", "research/"], ["About", "ab
     <main id="content" tabindex="-1"><slot /></main>
     <footer>
       <div class="shell footer-inner">
-        <span>motion / notes — an independent robotics journal</span>
+        <span>{siteName} — an independent robotics journal</span>
         <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
       </div>
     </footer>
