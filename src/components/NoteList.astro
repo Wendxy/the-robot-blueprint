@@ -1,0 +1,20 @@
+---
+import { formatDate, noteHref, type Note } from "../lib/posts";
+interface Props { notes: Note[]; heading?: "h2" | "h3"; showDate?: boolean; }
+const { notes, heading: Heading = "h2", showDate = false } = Astro.props;
+---
+{notes.length ? <ul class="note-list" role="list">
+  {notes.map(note => (
+    <li>
+      <a class="note" href={noteHref(note)} aria-labelledby={`title-${note.id}`}>
+        <span class="note-type">{note.data.category}{note.data.tags[0] && ` / ${note.data.tags[0]}`}</span>
+        <div class="note-main">
+          <Heading class="note-title" id={`title-${note.id}`}>{note.data.title}</Heading>
+          <p>{note.data.description}</p>
+          {showDate && <p class="entry-date">{note.data.example && "Example note · Prepared "}<time datetime={note.data.date.toISOString()}>{formatDate(note.data.date)}</time></p>}
+        </div>
+        <span class="note-arrow" aria-hidden="true">↗</span>
+      </a>
+    </li>
+  ))}
+</ul> : <p class="empty">New notes will appear here when they are ready.</p>}

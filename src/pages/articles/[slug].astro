@@ -1,0 +1,10 @@
+---
+import { getNotes, noteHref } from "../../lib/posts";
+
+export async function getStaticPaths() {
+  return (await getNotes()).filter(note => note.data.legacy).map(note => ({
+    params: { slug: note.id }, props: { destination: noteHref(note) }
+  }));
+}
+return Astro.redirect(Astro.props.destination, 301);
+---

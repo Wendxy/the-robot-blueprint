@@ -1,0 +1,28 @@
+<svg viewBox="0 0 520 370" xmlns="http://www.w3.org/2000/svg" fill="none" width="520" height="370">
+                <g stroke="#454942" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M60 318H456" stroke="#bcbfb9"/>
+                  <path d="M129 302H243V318H129Z" fill="#e4e6df"/>
+                  <path d="M154 290H217V302H154Z" fill="#e4e6df"/>
+                  <path d="M182 291L213 198" stroke-width="24"/>
+                  <path d="M182 291L213 198" stroke="#d8dbd3" stroke-width="20"/>
+                  <circle cx="182" cy="290" r="19" fill="#f2f2ee" stroke-width="2"/>
+                  <circle cx="182" cy="290" r="6" fill="#b5b9b0"/>
+                  <circle cx="213" cy="198" r="19" fill="#f2f2ee" stroke-width="2"/>
+                  <circle cx="213" cy="198" r="6" fill="#b5b9b0"/>
+                  <path d="M221 190L325 110" stroke-width="22"/>
+                  <path d="M221 190L325 110" stroke="#d8dbd3" stroke-width="17"/>
+                  <circle cx="325" cy="110" r="17" fill="#f2f2ee" stroke-width="2"/>
+                  <circle cx="325" cy="110" r="5" fill="#b5b9b0"/>
+                  <path d="M335 115L372 139" stroke-width="16"/>
+                  <path d="M335 115L372 139" stroke="#d8dbd3" stroke-width="12"/>
+                  <rect x="367" y="129" width="22" height="19" rx="2" fill="#f2f2ee" transform="rotate(28 367 129)"/>
+                  <path d="M382 146L407 158L417 174M391 144L416 147L423 133" stroke-width="5"/>
+                </g>
+                <g stroke="#a3a8a0" stroke-width="1" stroke-dasharray="3 6" fill="none">
+                  <path d="M210 198H93V144"/><path d="M323 111H398V83"/><path d="M413 165H460V228"/>
+                  <circle cx="182" cy="290" r="115" stroke="#cccec8" stroke-dasharray="2 8"/>
+                </g>
+                <g font-size="10" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" fill="#858980" letter-spacing=".03em">
+                  <text x="64" y="134">joint 01</text><text x="374" y="73">joint 02</text><text x="423" y="241">gripper</text>
+                </g>
+              </svg>

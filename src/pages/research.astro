@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+import { getNotes, noteHref } from "../lib/posts";
+import { threads } from "../lib/research";
+const notes = await getNotes();
+---
+<Base title="Research" description="Three open research threads on learning from demonstration, world models for control, and intelligence on small hardware.">
+  <div class="shell page">
+    <header class="page-head">
+      <h1>Research</h1><p>Three questions guide the journal, from the data a robot learns from to the hardware that carries it.</p>
+    </header>
+    {threads.map((thread, i) => {
+      const related = notes.filter(note => note.data.tags.includes(thread.tag));
+      return <section class="research-row ruled" id={thread.id} aria-labelledby={`h-${thread.id}`}>
+        <span class="meta">{String(i + 1).padStart(2, "0")}</span>
+        <div><h2 id={`h-${thread.id}`}>{thread.title}</h2><p>{thread.question}</p>
+          {related.length > 0 && <ul class="references">{related.map(note => <li><a href={noteHref(note)}>{note.data.title}</a></li>)}</ul>}
+        </div>
+      </section>
+    })}
+  </div>
+</Base>

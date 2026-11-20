@@ -1,0 +1,9 @@
+---
+import Base from "../layouts/Base.astro";
+import { href } from "../lib/posts";
+---
+<Base title="Page not found" noindex>
+  <div class="shell page"><header class="page-head"><h1>Page not found</h1>
+    <p>Find a note in the <a class="back" href={href("writing/")}>writing archive</a>.</p>
+  </header></div>
+</Base>

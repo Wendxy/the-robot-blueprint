@@ -1,0 +1,28 @@
+---
+import { render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import NoteFigure from "../../components/NoteFigure.astro";
+import { formatDate, getNotes, href, type Note } from "../../lib/posts";
+
+export async function getStaticPaths() {
+  return (await getNotes()).map(note => ({ params: { slug: note.id }, props: { note } }));
+}
+interface Props { note: Note; }
+const { note } = Astro.props;
+const { data } = note;
+const { Content } = await render(note);
+---
+<Base title={data.title} description={data.description} article>
+  <article class="shell reader">
+    <header class="article-head">
+      <a class="back" href={href("writing/")}>← All writing</a>
+      <p class="meta">{data.category} · {data.example && "Example note · Prepared "}<time datetime={data.date.toISOString()}>{formatDate(data.date)}</time>{data.readingTime && ` · ${data.readingTime} min read`}</p>
+      <h1>{data.title}</h1><p class="dek">{data.description}</p>
+    </header>
+    <div class="prose">
+      <NoteFigure note={note} />
+      <Content />
+      <nav aria-label="Article navigation" class="article-end"><a class="back" href={href("writing/")}>← All writing</a></nav>
+    </div>
+  </article>
+</Base>

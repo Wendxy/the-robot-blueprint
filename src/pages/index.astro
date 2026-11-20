@@ -1,0 +1,59 @@
+---
+import Base from "../layouts/Base.astro";
+import NoteList from "../components/NoteList.astro";
+import NoteFigure from "../components/NoteFigure.astro";
+import JournalStatement from "../components/JournalStatement.astro";
+import { getNotes, href, noteHref } from "../lib/posts";
+import { threads } from "../lib/research";
+
+const notes = await getNotes();
+const feature = notes.find(note => note.data.featured) ?? notes[0];
+const latest = notes.filter(note => note.id !== feature?.id).slice(0, 4);
+---
+<Base>
+  <section class="shell hero" aria-labelledby="hero-title">
+    <div class="reading">
+      <span class="meta">An independent robotics journal</span>
+      <h1 id="hero-title">Notes on machines <i>learning to move.</i></h1>
+      <p>A growing collection of experiments, observations, and questions about robot learning, small machines, and intelligence in the physical world.</p>
+      <a class="underlined-link" href="#writing">Read the journal <span class="link-arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+  {feature && <section class="shell ruled" aria-labelledby="featured-heading">
+    <div class="section-heading">
+      <h2 id="featured-heading">Featured note</h2><span class="meta">01 / {feature.data.category}</span>
+    </div>
+    <div class="feature">
+      <div class:list={["feature-grid", { "text-only": !feature.data.coverImage }]}>
+        <div class="feature-text">
+          <span class="meta">{feature.data.tags.slice(0,2).join(" · ") || feature.data.category}</span>
+          <h3><a href={noteHref(feature)}>{feature.data.title}</a></h3>
+          <p>{feature.data.description}</p>
+          <a class="underlined-link" href={noteHref(feature)}>Read the note <span class="link-arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <NoteFigure note={feature} featured />
+      </div>
+    </div>
+  </section>}
+  <section class="shell notes ruled" id="writing" aria-labelledby="notes-heading">
+    <div class="section-heading">
+      <h2 id="notes-heading">Writing &amp; field notes</h2><span class="meta">Latest first</span>
+    </div>
+    <NoteList notes={latest} heading="h3" />
+    {(feature?.data.example || latest.some(note => note.data.example)) && <p class="notes-notice">The example notes outline proposed experiments and open research questions.</p>}
+  </section>
+  <section class="shell threads ruled" aria-labelledby="research-heading">
+    <div class="section-heading">
+      <h2 id="research-heading">Currently exploring</h2><span class="meta">Research threads</span>
+    </div>
+    <div class="thread-grid">
+      {threads.map((thread, i) => <div class="thread">
+        <span class="meta">{String(i + 1).padStart(2, "0")}</span>
+        <h3><a href={href(`research/#${thread.id}`)}>{thread.title}</a></h3><p>{thread.summary}</p>
+      </div>)}
+    </div>
+  </section>
+  <section class="shell about" aria-labelledby="about-heading">
+    <div class="about-grid ruled"><h2 id="about-heading">About this journal</h2><div><JournalStatement /></div></div>
+  </section>
+</Base>

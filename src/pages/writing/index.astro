@@ -1,0 +1,15 @@
+---
+import Base from "../../layouts/Base.astro";
+import NoteList from "../../components/NoteList.astro";
+import { getNotes } from "../../lib/posts";
+const notes = await getNotes();
+---
+<Base title="Writing" description="Field notes, primers and proposed experiments on robot learning, control, and small hardware.">
+  <div class="shell page">
+    <header class="page-head">
+      <h1>Writing</h1>
+      <p>Field notes, primers, and proposed experiments, newest first.</p>
+    </header>
+    <NoteList notes={notes} showDate />
+  </div>
+</Base>

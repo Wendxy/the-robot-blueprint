@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/Base.astro";
+import JournalStatement from "../components/JournalStatement.astro";
+import { href } from "../lib/posts";
+---
+<Base title="About" description="An independent journal about learning, control, and the small machines that make those questions tangible.">
+  <div class="shell page">
+    <header class="page-head"><h1>About this journal</h1></header>
+    <div class="about-grid ruled about-body">
+      <h2>Motion / Notes</h2>
+      <div class="prose"><JournalStatement />
+        <h2>Keeping a research notebook</h2>
+        <p>A useful build log leaves enough detail for someone else to try the same thing. It names the task, describes what the robot could observe, and records the conditions under which it struggled.</p>
+        <p>A report of a completed experiment should include the setup, observations, and evidence behind its conclusions.</p>
+        <p><a href={href("research/")}>Explore the research threads</a></p>
+      </div>
+    </div>
+  </div>
+</Base>

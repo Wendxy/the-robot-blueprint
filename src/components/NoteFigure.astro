@@ -1,0 +1,15 @@
+---
+import { href, type Note } from "../lib/posts";
+interface Props { note: Note; featured?: boolean; }
+const { note, featured = false } = Astro.props;
+const { coverImage, coverAlt, caption } = note.data;
+const sketch = coverImage === "/images/articulated-arm.svg";
+const src = coverImage && (/^https?:\/\//.test(coverImage) ? coverImage : href(coverImage));
+---
+{src && <figure class="feature-figure">
+  <div class:list={["figure-field", { "article-figure": !featured }]}>
+    <img class:list={[{ sketch }]} src={src} alt={coverAlt} width={sketch ? 520 : undefined}
+      height={sketch ? 370 : undefined} loading="lazy" decoding="async" />
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>}
