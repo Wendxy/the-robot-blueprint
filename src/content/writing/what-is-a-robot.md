@@ -192,7 +192,8 @@ Remember the robot vacuum, dishwasher and factory arm from earlier? Now that we 
 
 - The **robot vacuum** can navigate around its environment and control its own movement.
 - The **factory arm** can perform programmed physical movements, such as picking up an object and placing it somewhere else. It might use sensors, but it doesn't necessarily need sophisticated perception or AI to do its job.
-- Wait a minute. If a **dishwasher** can sense things, make decisions and perform actions, why don't we call it a robot?
+
+Wait a minute. If a **dishwasher** can sense things, make decisions and perform actions, why don't we call it a robot?
 
 Well, that's where things get a little confusing. Because sensing and following instructions aren't exclusive to robots. Plenty of ordinary machines can do that too!
 
