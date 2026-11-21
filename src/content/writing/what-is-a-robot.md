@@ -1,13 +1,10 @@
 ---
-layout: "../../layouts/RobotPrimer.astro"
 title: "What is a robot?"
 description: "A robot vacuum, a factory arm, and a washing machine all follow instructions. Which ones count as robots, and why?"
 date: 2026-11-21
 category: "Back to basic"
 tags: ["Robotics"]
 ---
-
-# What is a robot?
 
 When we talk about robots, I bet a lot of you guys would immediately think of those scary, human-like machines from *The Terminator* or some other sci-fi movie.
 

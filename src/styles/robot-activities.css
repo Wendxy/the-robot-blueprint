@@ -1,9 +1,3 @@
-.robot-primer > h1 {
-  margin: 0 0 .6em;
-  font: 400 clamp(42px, 6vw, 80px)/1.04 var(--serif);
-  letter-spacing: -.045em;
-}
-
 .robot-activity {
   --forest: #375640;
   --rule: #cbd4c7;

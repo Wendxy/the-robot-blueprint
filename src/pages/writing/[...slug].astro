@@ -2,6 +2,7 @@
 import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import NoteFigure from "../../components/NoteFigure.astro";
+import "../../styles/robot-activities.css";
 import { formatDate, getNotes, href, type Note } from "../../lib/posts";
 
 export async function getStaticPaths() {
@@ -25,4 +26,7 @@ const { Content } = await render(note);
       <nav aria-label="Article navigation" class="article-end"><a class="back" href={href("writing/")}>← All writing</a></nav>
     </div>
   </article>
+  <script>
+    import "../../scripts/robot-activities";
+  </script>
 </Base>
