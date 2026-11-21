@@ -1,0 +1,139 @@
+.robot-primer > h1 {
+  margin: 0 0 .6em;
+  font: 400 clamp(42px, 6vw, 80px)/1.04 var(--serif);
+  letter-spacing: -.045em;
+}
+
+.robot-activity {
+  --forest: #375640;
+  --rule: #cbd4c7;
+  margin: 1.7em 0;
+  padding: clamp(16px, 4vw, 28px);
+  background: #f3f5ef;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  color: var(--ink);
+  font: 400 15px/1.5 var(--sans);
+}
+.robot-activity [hidden] { display: none; }
+.prose .robot-activity h3 { margin: 0; font-size: clamp(27px, 4vw, 34px); }
+.activity-hint { color: #536156; margin: 5px 0 20px; }
+.robot-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.robot-cards fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 6px 10px 13px;
+  text-align: center;
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  background: var(--paper);
+}
+.robot-cards legend { padding: 0 6px; font-weight: 650; }
+.robot-cards img { width: 100%; max-height: 110px; object-fit: contain; }
+.robot-choices, .stage-buttons { display: inline-flex; gap: 4px; }
+.robot-choices label { position: relative; cursor: pointer; }
+.robot-choices input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+}
+.robot-choices input:focus-visible + span { outline: 2px solid var(--forest); outline-offset: 2px; }
+.robot-choices span, .robot-button, .stage-buttons button {
+  display: inline-grid;
+  place-items: center;
+  min-height: 40px;
+  padding: 5px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  background: var(--paper);
+  color: var(--forest);
+  font: 600 14px/1.3 var(--sans);
+  cursor: pointer;
+}
+.robot-choices label:hover span, .robot-button:hover, .stage-buttons button:hover { border-color: var(--forest); }
+.robot-choices input:checked + span, .robot-button:not(.secondary), .stage-buttons [aria-pressed="true"] {
+  color: #fff;
+  background: var(--forest);
+  border-color: var(--forest);
+}
+.quiz-actions, .cycle-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 17px;
+}
+.guess-result, .quiz-actions output { color: var(--forest); font-weight: 600; }
+.guess-result { margin: 9px 0 0; font-size: 13px; }
+.room-plan { width: 100%; height: auto; display: block; }
+.cycle-controls { justify-content: space-between; }
+.stage-caption { margin: 14px 0 0; }
+.vacuum-travel { transform: translate(442px, 148px); }
+.turn-plan, .sensor-rays { opacity: 0; }
+[data-stage="sense"] .sensor-rays, [data-stage="think"] .turn-plan { opacity: 1; }
+[data-stage="act"] .vacuum-travel {
+  transform: translate(442px, 58px);
+  transition: transform .85s ease-in-out .32s;
+}
+[data-stage="act"] .vacuum-heading { transform: rotate(-90deg); transition: transform .32s ease-in-out; }
+.approaching[data-stage="sense"] .vacuum-travel { animation: vacuum-approach .9s ease-out both; }
+.approaching[data-stage="sense"] .sensor-rays { animation: wall-reading 1s steps(1, end) both; }
+@keyframes vacuum-approach { from { transform: translate(260px, 148px); } to { transform: translate(442px, 148px); } }
+@keyframes wall-reading { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .room-plan * { animation: none !important; transition: none !important; }
+}
+
+.machine-explorer details { border-top: 1px solid var(--rule); }
+.machine-explorer details:last-child { border-bottom: 1px solid var(--rule); }
+.machine-explorer summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 4px;
+  color: var(--forest);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 650;
+  list-style: none;
+}
+.machine-explorer summary::-webkit-details-marker { display: none; }
+.machine-explorer summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin: 0 6px 4px auto;
+  border: solid currentColor;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+.machine-explorer details[open] summary::after { transform: rotate(225deg); margin-bottom: -4px; }
+.machine-explorer summary img { width: 76px; }
+.machine-info { padding: 0 4px 12px; }
+.machine-info dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin: 0;
+}
+.machine-info dl div { background: var(--paper); padding: 12px; }
+.machine-info dt { color: var(--forest); font-weight: 700; }
+.machine-info dd { margin: 4px 0 0; }
+.machine-info p { margin: 12px 0 2px; }
+
+@media (max-width: 590px) {
+  .robot-cards, .machine-info dl { grid-template-columns: 1fr; }
+  .robot-cards fieldset { text-align: left; padding-block: 0 8px; }
+  .robot-cards img { display: inline-block; width: min(45%, 110px); vertical-align: middle; }
+  .robot-choices { vertical-align: middle; }
+  .guess-result { margin-top: 0; }
+  .stage-buttons button, .cycle-controls .robot-button { padding-inline: 10px; }
+  .cycle-controls { gap: 6px; }
+}
