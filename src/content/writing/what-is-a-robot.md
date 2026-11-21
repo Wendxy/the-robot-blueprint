@@ -1,6 +1,6 @@
 ---
 title: "What is a robot?"
-description: "A robot vacuum, a factory arm, and a washing machine all follow instructions. Which ones count as robots, and why?"
+description: "A robot vacuum, a factory arm, and a dishwasher all follow instructions. Which ones count as robots, and why?"
 date: 2026-11-21
 category: "Back to basic"
 tags: ["Robotics"]
