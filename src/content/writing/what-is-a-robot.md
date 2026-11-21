@@ -6,34 +6,20 @@ category: "Back to basic"
 tags: ["Robotics"]
 ---
 
-When we talk about robots, I bet a lot of you guys would immediately think of those scary, human-like machines from *The Terminator* or some other sci-fi movie.
-
-Or maybe you imagine a future where we all live on giant spaceships, sitting around and being served by robots all day, just like in *WALL·E*. Or perhaps something more fun and colourful, like the futuristic world in *Meet the Robinsons* (honestly, I wouldn't mind living there!).
+When we talk about robots, I bet a lot of you guys would immediately think of those scary, human-like machines from *The Terminator* or some other sci-fi movie. Or maybe you imagine a future where we all live on giant spaceships, sitting around and being served by robots all day, just like in *WALL·E*. Or perhaps something more fun and colourful, like the futuristic world in *Meet the Robinsons* (honestly, I wouldn't mind living there!).
 
 <figure>
   <img src="../../images/what-is-a-robot/meet-the-robinsons-city.jpg" width="1440" height="617" alt="Lewis and Wilbur ride in a red flying time machine past curved towers and a silver dome under a bright blue sky.">
   <figcaption>A ride through the city of the future in <cite>Meet the Robinsons</cite> (2007). Image © Disney. <a href="https://movies.disney.com/meet-the-robinsons">Disney Movies</a></figcaption>
 </figure>
 
-But here's the funny thing. We don't actually have to wait for some faraway sci-fi future to live with robots.
+But here's the funny thing. We don't actually have to wait for some faraway sci-fi future to live with robots. Surprisingly enough, we've already been living alongside robots for years!
 
-Surprisingly enough, we've already been living alongside robots for years!
+If you have a robot vacuum at home, congratulations, you already have your own little robot assistant. And even if you don't, you've probably seen robotic arms working in factories, robots delivering food in restaurants, or those cute little delivery robots roaming around. Nothing particularly futuristic about those anymore, right?
 
-If you have a robot vacuum at home, congratulations, you already have your own little robot assistant. And even if you don't, you've probably seen robotic arms working in factories, robots delivering food in restaurants, or those cute little delivery robots roaming around.
+But that brings up a question I've always found pretty interesting. **What actually makes something a robot?**
 
-Nothing particularly futuristic about those anymore, right?
-
-But that brings up a question I've always found pretty interesting.
-
-**What actually makes something a robot?**
-
-Is a robot vacuum a robot? Obviously, yes, it's literally in the name.
-
-What about a dishwasher? It can clean dishes all by itself, adjust its washing cycle and even detect how dirty the water is.
-
-Or a washing machine? You press a button, and it does everything for you.
-
-So... are those robots too?
+Is a robot vacuum a robot? Obviously, yes, it's literally in the name. What about a dishwasher? It can clean dishes all by itself, adjust its washing cycle and even detect how dirty the water is. Or a washing machine? You press a button, and it does everything for you. So... are those robots too?
 
 ## Okay, so what actually counts as a robot?
 
@@ -79,33 +65,19 @@ So... are those robots too?
   <noscript><details><summary>Reveal the answers</summary>Robot vacuum — yes. Dishwasher — generally no. Factory arm — yes.</details></noscript>
 </section>
 
-We tend to imagine robots as intelligent machines that can think, talk and do all sorts of complicated things. But in reality, a robot doesn't necessarily have to be intelligent at all.
+We tend to imagine robots as intelligent machines that can think, talk and do all sorts of complicated things. But in reality, a robot doesn't necessarily have to be intelligent at all. Broadly speaking, a robot is a programmable physical machine that can carry out actions with some degree of autonomy, usually by moving around or manipulating things in the physical world.
 
-Broadly speaking, a robot is a programmable physical machine that can carry out actions with some degree of autonomy, usually by moving around or manipulating things in the physical world.
+Sounds a bit fancy, doesn't it? Basically, a robot is a machine that can carry out physical tasks without us having to control every single movement.
 
-Sounds a bit fancy, doesn't it?
-
-Basically, a robot is a machine that can carry out physical tasks without us having to control every single movement.
-
-And here's something that surprised me when I first started learning about robotics: **a robot doesn't even need AI to be a robot!**
-
-A factory robotic arm, for example, might simply repeat the same pick-and-place movement thousands of times a day. It doesn't necessarily understand what it's picking up, or why. It just follows its programmed instructions.
-
-Yet, it's still a robot.
+And here's something that surprised me when I first started learning about robotics: **a robot doesn't even need AI to be a robot!** A factory robotic arm, for example, might simply repeat the same pick-and-place movement thousands of times a day. It doesn't necessarily understand what it's picking up, or why. It just follows its programmed instructions. Yet, it's still a robot.
 
 Meanwhile, a dishwasher might have sensors, automatic programs and some pretty clever control systems. But we wouldn't normally classify a conventional dishwasher as a robot. It's an automated appliance.
 
-So, not every automated machine is a robot, and not every robot is intelligent.
-
-The boundary can be a little fuzzy, but I think that's what makes this question so interesting.
+So, not every automated machine is a robot, and not every robot is intelligent. The boundary can be a little fuzzy, but I think that's what makes this question so interesting.
 
 ## Sense, Think, Act. That's it?
 
-Now that we have a rough idea of what a robot is, let's talk about how one actually works.
-
-A really common way to understand robot behaviour is through something called the **Sense → Think → Act** cycle.
-
-Don't worry, it's nowhere near as complicated as it sounds.
+Now that we have a rough idea of what a robot is, let's talk about how one actually works. A really common way to understand robot behaviour is through something called the **Sense → Think → Act** cycle. Don't worry, it's nowhere near as complicated as it sounds.
 
 1. **Sense:** The robot gathers information about its surroundings using sensors, like cameras, distance sensors or touch sensors.
 2. **Think:** The robot processes that information and decides what to do next. This could be something as simple as following a predefined rule, or something much more complicated involving AI.
@@ -168,29 +140,17 @@ And then it repeats!
   <noscript>The controller chooses a left turn. The wheels turn the vacuum and drive it along the wall.</noscript>
 </section>
 
-Let's take our little robot vacuum as an example.
+Let's take our little robot vacuum as an example. Imagine it's happily cleaning your living room when suddenly... there's a wall.
 
-Imagine it's happily cleaning your living room when suddenly... there's a wall.
+First, it **senses** the obstacle using its sensors. Then, its controller **processes** that information and decides that continuing straight ahead probably isn't a great idea. Finally, it **acts** by turning its wheels and moving in another direction. And off it goes, continuing its very important mission of keeping your floor clean.
 
-First, it **senses** the obstacle using its sensors.
-
-Then, its controller **processes** that information and decides that continuing straight ahead probably isn't a great idea.
-
-Finally, it **acts** by turning its wheels and moving in another direction.
-
-And off it goes, continuing its very important mission of keeping your floor clean.
-
-Pretty simple, right?
-
-Of course, real robots can be much more complicated than that, with multiple sensors and control processes running at once. But Sense → Think → Act is a nice starting point for understanding what's happening behind the scenes.
+Pretty simple, right? Of course, real robots can be much more complicated than that, with multiple sensors and control processes running at once. But Sense → Think → Act is a nice starting point for understanding what's happening behind the scenes.
 
 And notice something important here: the "Think" part doesn't necessarily mean the robot is actually thinking like a human. Sometimes it's just following a simple rule, such as "if there's an obstacle ahead, turn left."
 
 ## So, let's go back to our examples
 
-Remember the robot vacuum, dishwasher and factory arm from earlier?
-
-Now that we know a little more about robotics, let's see how they compare.
+Remember the robot vacuum, dishwasher and factory arm from earlier? Now that we know a little more about robotics, let's see how they compare.
 
 <section class="robot-activity machine-explorer" aria-labelledby="machines-title">
   <h3 id="machines-title">Meet the machines</h3>
@@ -232,50 +192,28 @@ Now that we know a little more about robotics, let's see how they compare.
 
 - The **robot vacuum** can navigate around its environment and control its own movement.
 - The **factory arm** can perform programmed physical movements, such as picking up an object and placing it somewhere else. It might use sensors, but it doesn't necessarily need sophisticated perception or AI to do its job.
-- And the **dishwasher**? Well, it also senses things, processes information and performs actions. But its behaviour is generally limited to an automated washing process rather than the kind of physical movement or manipulation we normally associate with robotics.
+- Wait a minute. If a **dishwasher** can sense things, make decisions and perform actions, why don't we call it a robot?
 
-That's why simply having sensors and following instructions isn't enough to make something a robot.
+Well, that's where things get a little confusing. Because sensing and following instructions aren't exclusive to robots. Plenty of ordinary machines can do that too!
+
+What usually sets robots apart is how they use controlled physical movement to navigate their environment or manipulate things around them. And even then, the boundary isn't always perfectly clear. That's why simply having sensors and following instructions isn't enough to make something a robot.
 
 And honestly, when robotic arms and robot vacuums first came out, I bet they felt just as futuristic as the robots we see in movies today. We've just gotten so used to them that we don't think much about it anymore. (Which is kinda funny if you think about it!)
 
 ## But if robots have been around for so long, what's different now?
 
-This is where things start getting really interesting.
+This is where things start getting really interesting. For a long time, many robots were designed to do specific tasks in carefully controlled environments. A factory arm might be programmed to pick up an object from one exact position and place it at another. It could perform that task incredibly quickly and accurately, but if you suddenly moved the object somewhere unexpected, the robot might struggle.
 
-For a long time, many robots were designed to do specific tasks in carefully controlled environments.
+And that's one of the big challenges in robotics. The real world is messy. Objects move, environments change, and things don't always go according to plan. You can't possibly write a separate rule for every situation a robot might encounter.
 
-A factory arm might be programmed to pick up an object from one exact position and place it at another. It could perform that task incredibly quickly and accurately, but if you suddenly moved the object somewhere unexpected, the robot might struggle.
+So, what if instead of telling a robot exactly what to do in every situation, we could **teach it how to learn?** That's one of the ideas driving modern robot learning. With advances in AI, robots can increasingly learn from demonstrations, recognise unfamiliar objects, adapt their actions to changing environments and even use learned models to help plan what to do next.
 
-And that's one of the big challenges in robotics.
+For example, instead of programming every single movement needed to pick up a cup, we could show a robot how to pick up different objects and train it to learn patterns that might help it handle a cup it has never seen before. Of course, this doesn't mean robots can suddenly think or reason exactly like humans. They still make mistakes, struggle with unfamiliar situations and often need a lot of training.
 
-The real world is messy. Objects move, environments change, and things don't always go according to plan.
+But the goal is changing. Rather than building a robot that can perform just one carefully programmed task, researchers are working towards robots that can learn many different tasks, adapt to new environments and become more useful in our everyday lives.
 
-You can't possibly write a separate rule for every situation a robot might encounter.
-
-So, what if instead of telling a robot exactly what to do in every situation, we could **teach it how to learn?**
-
-That's one of the ideas driving modern robot learning.
-
-With advances in AI, robots can increasingly learn from demonstrations, recognise unfamiliar objects, adapt their actions to changing environments and even use learned models to help plan what to do next.
-
-For example, instead of programming every single movement needed to pick up a cup, we could show a robot how to pick up different objects and train it to learn patterns that might help it handle a cup it has never seen before.
-
-Of course, this doesn't mean robots can suddenly think or reason exactly like humans. They still make mistakes, struggle with unfamiliar situations and often need a lot of training.
-
-But the goal is changing.
-
-Rather than building a robot that can perform just one carefully programmed task, researchers are working towards robots that can learn many different tasks, adapt to new environments and become more useful in our everyday lives.
-
-And personally, I think that's one of the most exciting things happening in robotics right now.
-
-Because imagine having a robot at home that doesn't just vacuum your floor, but can help you fold laundry, tidy your room, put things away or even make you breakfast.
-
-(Although, knowing myself, I'd probably spend more time teaching it to do something silly than actually making it useful lol.)
+And personally, I think that's one of the most exciting things happening in robotics right now. Because imagine having a robot at home that doesn't just vacuum your floor, but can help you fold laundry, tidy your room, put things away or even make you breakfast. (Although, knowing myself, I'd probably spend more time teaching it to do something silly than actually making it useful lol.)
 
 We're definitely not quite there yet, at least not in the way sci-fi movies imagine it. But we're getting closer, and there's still so much interesting research happening along the way.
 
-So, I guess the next question is...
-
-**If robots can already follow instructions, how do we actually teach them to learn?**
-
-And that's a whole other topic I want to explore next!
+So, I guess the next question is... **If robots can already follow instructions, how do we actually teach them to learn?** And that's a whole other topic I want to explore next!
