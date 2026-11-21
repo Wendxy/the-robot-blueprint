@@ -197,7 +197,7 @@ Wait a minute. If a **dishwasher** can sense things, make decisions and perform 
 
 Well, that's where things get a little confusing. Because sensing and following instructions aren't exclusive to robots. Plenty of ordinary machines can do that too!
 
-What usually sets robots apart is how they use controlled physical movement to navigate their environment or manipulate things around them. And even then, the boundary isn't always perfectly clear. That's why simply having sensors and following instructions isn't enough to make something a robot.
+What usually sets robots apart is how they use controlled physical movement to navigate their environment or manipulate things around them. And even then, the boundary isn't always perfectly clear. That's why simply having sensors and following instructions isn't enough to make something a robot (I would honestly still argue that a dishwasher is a robot in many definitions).
 
 And honestly, when robotic arms and robot vacuums first came out, I bet they felt just as futuristic as the robots we see in movies today. We've just gotten so used to them that we don't think much about it anymore. (Which is kinda funny if you think about it!)
 
