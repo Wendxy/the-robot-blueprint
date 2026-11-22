@@ -4,7 +4,6 @@ description: "Robots can bend, slide, and twist, but not every joint moves the s
 date: 2026-11-22
 category: "Back to Basics"
 tags: ["Robotics", "Robot Joints", "Kinematics"]
-draft: true
 ---
 
 In my [previous post](../how-do-you-actually-calculate-dof/), we talked about degrees of freedom (DOF), how to calculate them, and why having four joints doesn't necessarily mean having four independent movements. That got me thinking about the joints themselves. What exactly is a joint, and what makes it move? Think about your elbow, wrist, or shoulder. They're what allow us to bend our arms, rotate our wrists, and move our bodies around.
