@@ -4,7 +4,6 @@ description: "Why does a four-bar linkage with four rotating joints have only on
 date: 2026-11-22
 category: "Back to Basics"
 tags: ["Robotics", "Degrees of Freedom", "Kinematics"]
-draft: true
 ---
 
 In my [previous post](../robots-come-in-all-shapes-and-sizes/), I briefly introduced one of the most important concepts in robotics: **Degrees of Freedom**, or DOF for short. We talked about how DOF describes the number of independent ways a robot can move, and how a robot arm with six independently moving joints typically has six degrees of freedom.
@@ -226,7 +225,7 @@ But I think we've had enough maths for one day. We'll save those for another pos
 If you want to dive a little deeper into degrees of freedom (or just play around with some mechanisms yourself!), here are some useful resources:
 
 - **[Degrees of Freedom of a Rigid Body — Modern Robotics](https://modernrobotics.northwestern.edu/nu-gm-book-resource/2-1-degrees-of-freedom-of-a-rigid-body/)**  
-  A short video explaining configuration space and why a rigid body in 3D has six degrees of freedom, including the 3 + 2 + 1 explanation.
+  A short video explaining configuration space and why a rigid body in 3D has six degrees of freedom, including the 3 + 2 + 1 explanation. Super clear explanation.
 
 - **[Degrees of Freedom of a Robot — Modern Robotics](https://modernrobotics.northwestern.edu/nu-gm-book-resource/2-2-degrees-of-freedom-of-a-robot/)**  
   Learn how to calculate DOF using Grübler's formula, and why four joints don't necessarily mean four degrees of freedom.
