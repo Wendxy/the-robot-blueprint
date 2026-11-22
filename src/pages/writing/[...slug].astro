@@ -31,5 +31,8 @@ const { Content } = await render(note);
     if (document.querySelector("[data-robot-demo]")) {
       void import("../../scripts/robot-shapes");
     }
+    if (document.querySelector("[data-joint-demo]")) {
+      void import("../../scripts/robot-joints");
+    }
   </script>
 </Base>

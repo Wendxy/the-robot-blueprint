@@ -12,7 +12,8 @@ export function jointMotion(root: HTMLElement, input: HTMLInputElement, pick?: (
   button.type = "button";
   button.className = "robot-button secondary motion-play";
   button.textContent = "Play motion";
-  input.closest("label")!.after(button);
+  const controls = input.closest(".shape-sliders") ?? input.closest("label")!;
+  controls.after(button);
 
   const min = Number(input.min), max = Number(input.max);
   let frame = 0;
@@ -31,7 +32,7 @@ export function jointMotion(root: HTMLElement, input: HTMLInputElement, pick?: (
     input.dispatchEvent(new Event("input", { bubbles: true }));
     updating = false;
   }
-  input.addEventListener("input", () => { if (!updating) stop(); });
+  root.addEventListener("input", () => { if (!updating) stop(); }, true);
   button.addEventListener("click", () => {
     if (frame) { stop(); return; }
     const span = max - min;
