@@ -28,5 +28,8 @@ const { Content } = await render(note);
   </article>
   <script>
     import "../../scripts/robot-activities";
+    if (document.querySelector("[data-robot-demo]")) {
+      void import("../../scripts/robot-shapes");
+    }
   </script>
 </Base>
