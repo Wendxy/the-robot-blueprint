@@ -170,3 +170,19 @@ You know where you want the gripper to go. But how does the robot figure out **e
 Turns out, there's a whole area of robotics dedicated to figuring that out. And that's where things like **forward kinematics and inverse kinematics** come in. But we'll leave that for another post!
 
 [last post about what makes something a robot]: ../what-is-a-robot/
+
+### Curious to learn more?
+
+If you want to explore a little further, here are some resources I found really useful!
+
+- **[Types of Industrial Robots — International Federation of Robotics](https://ifr.org/pages/)**  
+  A handy reference for different robot structures, including articulated, SCARA, Cartesian and Delta robots.
+
+- **[Degrees of Freedom of a Robot — Modern Robotics](https://modernrobotics.northwestern.edu/nu-gm-book-resource/2-2-degrees-of-freedom-of-a-robot/)**  
+  A short video explaining joints, degrees of freedom and how we actually calculate them. A little more mathematical, but worth checking out!
+
+- **[Task Space and Workspace — Modern Robotics](https://modernrobotics.northwestern.edu/nu-gm-book-resource/2-5-task-space-and-workspace/)**  
+  A quick explanation of why robots can't necessarily reach everywhere, even when they have lots of joints.
+
+- **[Robot Academy — Peter Corke](https://petercorke.com/resources/robot-academy/)**  
+  A collection of short robotics lessons covering everything from robot motion to kinematics. Great if you want to keep exploring!
