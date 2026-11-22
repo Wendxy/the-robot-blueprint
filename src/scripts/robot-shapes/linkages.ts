@@ -73,11 +73,11 @@ function bearing(a: Point, b: Point) {
 }
 
 function openArm(root: HTMLElement) {
-  root.insertAdjacentHTML("beforeend", diagram("0 -11 212 204", "An open arm with three movable joints and a gripper", '<g data-links></g>'));
+  root.insertAdjacentHTML("beforeend", diagram("0 0 284 284", "An open arm with three movable joints and a gripper", '<g data-links></g>'));
   const drawing = root.querySelector("[data-links]")!;
   const angles = [65, -55, 30];
-  const lengths = [36, 29, 23];
-  const base = { x: 104, y: 91 };
+  const lengths = [52, 42, 34];
+  const base = { x: 142, y: 142 };
   let points: Point[] = [];
   function draw() {
     points = [base];
@@ -120,13 +120,13 @@ function fourBarDrawing([a,b,c,d]: Point[], numbered: boolean) {
     numberedJoint(d.x,d.y,4,"Output pivot",false);
 }
 
-function linkageDiagram(root: HTMLElement) {
-  root.insertAdjacentHTML("beforeend", diagram("0 0 212 182", "Four-bar linkage with two grounded pivots and one movable input", '<g data-links></g>'));
+function linkageDiagram(root: HTMLElement, viewBox = "0 0 212 182") {
+  root.insertAdjacentHTML("beforeend", diagram(viewBox, "Four-bar linkage with two grounded pivots and one movable input", '<g data-links></g>'));
   return root.querySelector("[data-links]")!;
 }
 
 function linkage(root: HTMLElement, output: HTMLOutputElement) {
-  const drawing = linkageDiagram(root);
+  const drawing = linkageDiagram(root, "-36 -12 284 284");
   function draw(angle: number) {
     const pivots = fourBar(angle);
     drawing.innerHTML = fourBarDrawing(pivots, false);

@@ -90,7 +90,7 @@
 }
 
 .dof-pair .shape-slider + .shape-slider { margin-top: 6px; }
-.dof-pair .shape-diagram { max-height: 200px; }
+.dof-pair .shape-diagram { aspect-ratio: 1; max-height: 320px; }
 .link-bar { stroke-linecap: round; }
 [data-handle] { cursor: grab; touch-action: none; }
 [data-robot-demo="four-joint-mystery"] svg, .dof-model svg { touch-action: none; }
@@ -109,7 +109,6 @@
 .arm-picker .fixed-driver { box-sizing: border-box; display: flex; align-items: center; }
 .dof-model[data-highlight="links"] .arm-base { fill: #ae6b32; }
 .dof-model[data-highlight="links"] .link-fill, .dof-model[data-highlight="joints"] .pin-face { stroke: #ae6b32; }
-.dof-model[data-highlight="plane"] svg { background-color: #e7eddf; background-image: linear-gradient(#c8d5c34d 1px, transparent 1px), linear-gradient(90deg, #c8d5c34d 1px, transparent 1px); background-size: 14px 14px; }
 .point-grid, .point-locus, .point-drop, .point-edge { fill: none; }
 .point-grid { stroke: #cbd5c7; stroke-width: .8; }
 .point-locus { stroke: #9a683e; stroke-width: 1.6; stroke-dasharray: 4 3; }
