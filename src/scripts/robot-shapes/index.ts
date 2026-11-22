@@ -3,8 +3,13 @@ import { gallery } from "./gallery";
 import { anatomy, playground } from "./mechanisms";
 import { builder, cupChallenge } from "./planar";
 import { poseExplorer } from "./pose";
+import { calculator, mystery } from "./linkages";
+import { rigidBody } from "./rigid-body";
 
 const demos: Record<string, (root: HTMLElement) => void> = {
+  "four-joint-mystery": mystery,
+  "rigid-body-points": rigidBody,
+  "four-bar-calculator": calculator,
   "robot-gallery": gallery,
   "arm-anatomy": anatomy,
   "joint-playground": playground,

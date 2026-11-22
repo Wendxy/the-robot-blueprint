@@ -88,3 +88,34 @@
   .joint-card .shape-slider { font-size: 13px; gap: 0 4px; }
   .part-label text, .diagram-label { font-size: 14px; }
 }
+
+.dof-pair .shape-slider + .shape-slider { margin-top: 6px; }
+.dof-pair .shape-diagram { max-height: 200px; }
+.link-bar { stroke-linecap: round; }
+[data-handle] { cursor: grab; touch-action: none; }
+[data-robot-demo="four-joint-mystery"] svg, .dof-model svg { touch-action: none; }
+.dof-calc { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 18px; }
+.calc-modes { margin-bottom: 16px; }
+.calc-terms .shape-options { display: grid; grid-template-columns: 1fr 1fr; }
+.calc-terms .shape-options button { padding: 5px; font-size: 13px; }
+.dof-calculation p { margin: 12px 0 0; }
+.dof-calculation .calc-equation { padding-top: 12px; border-top: 1px solid var(--rule); font-weight: 700; color: var(--forest); }
+.arm-picker { display: grid; gap: 4px; margin-bottom: 8px; font-weight: 600; }
+.arm-picker select, .arm-picker .fixed-driver { width: 100%; min-height: 36px; padding: 4px 8px; font: inherit; color: var(--forest); background: var(--paper); border: 1px solid var(--rule); border-radius: 5px; }
+.arm-pin-number { font: 650 6.3px var(--sans); fill: #263d2b; }
+[data-arm-joint] { cursor: pointer; }
+.dof-model .shape-diagram { aspect-ratio: 1; touch-action: pan-y; cursor: ew-resize; user-select: none; }
+.dof-model .motion-play { margin-top: 8px; }
+.arm-picker .fixed-driver { box-sizing: border-box; display: flex; align-items: center; }
+.dof-model[data-highlight="links"] .arm-base { fill: #ae6b32; }
+.dof-model[data-highlight="links"] .link-fill, .dof-model[data-highlight="joints"] .pin-face { stroke: #ae6b32; }
+.dof-model[data-highlight="plane"] svg { background-color: #e7eddf; background-image: linear-gradient(#c8d5c34d 1px, transparent 1px), linear-gradient(90deg, #c8d5c34d 1px, transparent 1px); background-size: 14px 14px; }
+.point-grid, .point-locus, .point-drop, .point-edge { fill: none; }
+.point-grid { stroke: #cbd5c7; stroke-width: .8; }
+.point-locus { stroke: #9a683e; stroke-width: 1.6; stroke-dasharray: 4 3; }
+.point-drop { stroke: #8b9e86; stroke-dasharray: 3 3; }
+.point-edge { stroke: #526b54; stroke-width: 2; }
+.point-label { paint-order: stroke; stroke: #f9f8ef; stroke-width: 3px; }
+@media (max-width: 590px) {
+  .dof-calc, .dof-pair { grid-template-columns: 1fr; }
+}

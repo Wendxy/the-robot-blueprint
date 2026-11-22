@@ -1,6 +1,6 @@
 import { buttonGroup, diagram, slider } from "./controls";
+import { project, type Vector } from "./projection";
 
-type Vector = [number, number, number];
 const half = 14;
 const corners: Vector[] = [
   [-half, -half, -half], [half, -half, -half], [half, half, -half], [-half, half, -half],
@@ -11,7 +11,6 @@ const faces = [
   { corners: [0,1,5,4], color: "#819b87" }, { corners: [1,2,6,5], color: "#b6cbb3" },
   { corners: [2,3,7,6], color: "#91ad98" }, { corners: [3,0,4,7], color: "#d0dace" },
 ];
-const project = ([x,y,z]: Vector) => [200 + .86 * (x-y), 158 + .36 * (x+y) - .87*z];
 
 function line(a: Vector, b: Vector) {
   const [x1,y1] = project(a), [x2,y2] = project(b);
