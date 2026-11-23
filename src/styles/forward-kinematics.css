@@ -1,0 +1,31 @@
+.fk-activity .shape-diagram { height: clamp(285px, 48vw, 410px); max-height: 410px; }
+.fk-modes:empty { display: none; }
+.fk-axes { fill: none; stroke: #8b9c87; stroke-width: 1.15; }
+.fk-axes text { font: 600 10px var(--sans); fill: #546950; stroke: #f9f8ef; stroke-width: 2.5px; paint-order: stroke; }
+.fk-base-axes, .fk-local-axes { stroke: #976337; stroke-width: 1.6; }
+.fk-base-axes text, .fk-local-axes text { fill: #805229; }
+.fk-projections { fill: none; stroke: #9a683e; stroke-width: 1.5; stroke-dasharray: 3 3; }
+.fk-link-1 { --fk-colour: #a8c0a6; fill: var(--fk-colour); }
+.fk-link-2 { --fk-colour: #e2bc8e; fill: var(--fk-colour); }
+.fk-readout { margin-top: 14px; color: #375640; font-variant-numeric: tabular-nums; }
+[data-fk-demo="forward-kinematics-calculator"] .fk-readout { display: grid; gap: 10px; }
+.fk-term { display: inline-block; padding-inline: 4px; background: color-mix(in srgb,var(--fk-colour) 45%,transparent); border-bottom: 2px solid var(--fk-colour); }
+.fk-substitution { margin: 2px 0 0 1.6em; }
+.fk-angle { fill: none; stroke: #996735; stroke-width: 1.8; }
+.fk-dimensions { font: 600 10px var(--sans); fill: #815b33; }
+
+.fk-horizontal { fill: none; stroke: #4e7359; stroke-width: 2; }
+.fk-vertical { fill: none; stroke: #996735; stroke-width: 2; stroke-dasharray: 3 2; }
+.fk-dimensions text:first-child { fill: #43674e; }
+.fk-length { fill: #405b48; font: 600 10px var(--sans); paint-order: stroke; stroke: #f9f8ef; stroke-width: 2px; }
+[data-driver="shoulder"] .drawn-arm rect, [data-driver="elbow"] .fk-link-2 rect { stroke: #986436; stroke-width: 3; }
+[data-driver="elbow"] .fk-link-1 { opacity: .55; }
+
+.fk-joint-angle-1 { color: #3d684b; }
+.fk-joint-angle-2 { color: #8c552b; }
+.fk-joint-angle .fk-angle { stroke: currentColor; }
+.fk-joint-angle text { font: 650 10px var(--sans); fill: currentColor; stroke: #f9f8ef; stroke-width: 3px; paint-order: stroke; }
+/* Keep the Cartesian projections quieter than the two angular reference rays. */
+:is([data-fk-demo="two-joint-robot"], [data-fk-demo="forward-kinematics-calculator"]) .fk-projections {
+  stroke: #a5b3a1; stroke-width: 1; stroke-dasharray: 1.5 3;
+}

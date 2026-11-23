@@ -1,5 +1,5 @@
 import { buttonGroup, diagram, slider } from "./controls";
-import { project, type Vector } from "./projection";
+import { project, rigidTransform, type Vector } from "./projection";
 
 const half = 14;
 const corners: Vector[] = [
@@ -31,14 +31,8 @@ export function poseExplorer(root: HTMLElement) {
     `<g stroke="#cbd5c7" stroke-width=".9">${grid.join("")}</g><g stroke="#7c8c7a" stroke-width="1.4">${guides}</g><g data-projection></g><g data-cube></g>`) +
     '<div class="pose-modes"></div><div class="shape-sliders" data-position></div><div class="shape-sliders" data-orientation></div>';
   const position: Vector = [0,0,50], angles: Vector = [0,0,0];
-  function transform([x,y,z]: Vector): Vector {
-    // Intrinsic roll, pitch, yaw represented by Rz(yaw) Ry(pitch) Rx(roll).
-    const [a,b,c] = angles.map(v => v * Math.PI / 180);
-    const ry = y*Math.cos(a) - z*Math.sin(a), rz = y*Math.sin(a) + z*Math.cos(a);
-    const px = x*Math.cos(b) + rz*Math.sin(b), pz = -x*Math.sin(b) + rz*Math.cos(b);
-    return [px*Math.cos(c) - ry*Math.sin(c) + position[0], px*Math.sin(c) + ry*Math.cos(c) + position[1], pz + position[2]];
-  }
   function draw() {
+    const transform = rigidTransform(position, angles);
     const vertices = corners.map(transform);
     const [px,py] = project([position[0],position[1],0]);
     root.querySelector("[data-projection]")!.innerHTML = `<ellipse cx="${px}" cy="${py}" rx="17" ry="7" fill="#cbd7c6"/><g stroke="#849880" stroke-dasharray="3 3">${line([position[0],position[1],0],position)}</g>`;

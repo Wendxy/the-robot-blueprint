@@ -34,5 +34,8 @@ const { Content } = await render(note);
     if (document.querySelector("[data-joint-demo]")) {
       void import("../../scripts/robot-joints");
     }
+    if (document.querySelector("[data-fk-demo]")) {
+      void import("../../scripts/forward-kinematics");
+    }
   </script>
 </Base>
